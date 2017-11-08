@@ -1,2 +1,2 @@
-## 1.0.0 - UNRELEASED
+## 1.0.0 - 2017-11-07
 - Initial release

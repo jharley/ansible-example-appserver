@@ -1,1 +1,24 @@
 ---
+- name: update apt cache
+  apt:
+    update_cache: yes
+    cache_valid_time: 86400
+
+- name: install nginx
+  apt:
+    pkg: nginx
+    state: present
+
+- name: start and enable nginx service
+  service:
+    name: nginx
+    state: started
+    enabled: yes
+
+- name: Place greeting index in webserver docroot
+  copy:
+    src: index.html
+    dest: /var/www/html/index.html
+    owner: root
+    group: root
+    mode: 0644
